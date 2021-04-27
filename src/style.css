@@ -1,0 +1,271 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.disable-click {
+  pointer-events: none;
+}
+
+.enable-click {
+  pointer-events: none;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-size: contain;
+  width: 400px;
+  height: 825px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  padding: 0rem 0rem 1rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+          box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+  background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    width: 100vw;
+    height: 100vh;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    padding: 0rem 0.25rem;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin: 1.5rem;
+}
+
+.output-key-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 40%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.output-key-container .output-key-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background: #35b9d7;
+  -webkit-box-shadow: inset 9px 9px 9px rgba(0, 0, 0, 0.25), inset -9px -9px 9px #71d8ef;
+          box-shadow: inset 9px 9px 9px rgba(0, 0, 0, 0.25), inset -9px -9px 9px #71d8ef;
+  border-radius: 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.output-key-container .output-key,
+.output-key-container .output-key-sub {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 7.5rem;
+  color: #dbdbdb;
+}
+
+.subdisplay-container {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.subdisplay-container .input-key-container,
+.subdisplay-container .home-key-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #f2f2f2;
+  -webkit-box-shadow: inset 7px 7px 9px rgba(0, 0, 0, 0.25), inset -9px -9px 9px #ffffff;
+          box-shadow: inset 7px 7px 9px rgba(0, 0, 0, 0.25), inset -9px -9px 9px #ffffff;
+  border-radius: 10px;
+  height: 4.5rem;
+  width: 4.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subdisplay-container .input-key,
+.subdisplay-container .input-key-sub,
+.subdisplay-container .home-key,
+.subdisplay-container .home-key-sub {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #35b9d7;
+}
+
+.subdisplay-container .home-key,
+.subdisplay-container .home-key-sub {
+  color: grey;
+}
+
+.keypad-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.key {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f2f2f2;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25), -5px -5px 5px white;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25), -5px -5px 5px white;
+  color: gray;
+}
+
+.key h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.key-pressed {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f2f2f2;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 5px white;
+          box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 5px white;
+  color: #35b9d7;
+}
+
+.key-pressed h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.subpad-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.subpad-container .subpad-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.5rem;
+  width: 50%;
+  background: #f2f2f2;
+  -webkit-box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.25), -9px -9px 9px rgba(255, 255, 255, 0.86);
+          box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.25), -9px -9px 9px rgba(255, 255, 255, 0.86);
+  border-radius: 25px;
+  margin: 0.5rem;
+  color: gray;
+}
+
+.subpad-container .subpad-btn h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+#transpose {
+  width: 100%;
+  margin: 1rem 0.5rem;
+}
+/*# sourceMappingURL=style.css.map */

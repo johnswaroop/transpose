@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import './style.css';
+import { KeyContext } from './KeyContext'
+import { useState } from 'react'
+import Display from './Display'
+import Subdisplay from './Subdisplay'
+import Keypad from './Keypad'
+import Subpad from './Subpad'
+import Transpose from './Transpose'
+
 
 function App() {
+
+  const [globalKeys, setGlobalKeys] = useState({
+
+    inputKey: '',
+    inputKeySub: '',
+    homeKey: 'D',
+    homeKeySub: '',
+    outputKey: '',
+    outputKeySub: '',
+
+  });
+
+
+
+
+
+
+
   return (
+
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <KeyContext.Provider value={[globalKeys, setGlobalKeys]}>
+          <Display />
+          <Subdisplay />
+          <Keypad />
+          <Subpad />
+          <Transpose />
+        </KeyContext.Provider>
+      </div>
     </div>
+
   );
 }
 
