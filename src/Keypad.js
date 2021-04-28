@@ -52,6 +52,8 @@ const Keypad = (props) => {
 
     }
 
+    console.log(keys);
+
     return (
 
         <div className='keypad-container' onClick={KeypadClicker} >
