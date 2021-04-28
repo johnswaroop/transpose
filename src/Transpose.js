@@ -8,7 +8,7 @@ const Transpose = (props) => {
 
     return (
         <div className='subpad-container'>
-            <div id='transpose' className='subpad-btn'>
+            <div id='transpose' className='subpad-btn btn-off'>
                 <h1>Transpose</h1>
             </div>
         </div>

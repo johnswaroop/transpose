@@ -43,7 +43,7 @@ body {
   height: 825px;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
-  padding: 0rem 0rem 1rem;
+  padding: 0rem 0rem 0.5rem;
   overflow: hidden;
   position: relative;
   border-radius: 40px;
@@ -75,6 +75,9 @@ body {
           flex-direction: column;
   height: 100%;
   margin: 1.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .output-key-container {
@@ -119,7 +122,6 @@ body {
 }
 
 .subdisplay-container {
-  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,7 +174,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1.5rem;
 }
 
 .key {
@@ -251,11 +252,8 @@ body {
   height: 3.5rem;
   width: 50%;
   background: #f2f2f2;
-  -webkit-box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.25), -9px -9px 9px rgba(255, 255, 255, 0.86);
-          box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.25), -9px -9px 9px rgba(255, 255, 255, 0.86);
   border-radius: 25px;
-  margin: 0.5rem;
-  color: gray;
+  margin: 0 0.5rem 0;
 }
 
 .subpad-container .subpad-btn h1 {
@@ -264,8 +262,20 @@ body {
   font-size: 1.5rem;
 }
 
+.btn-off {
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25), -5px -5px 5px white;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25), -5px -5px 5px white;
+  color: gray;
+}
+
+.btn-on {
+  -webkit-box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 5px white;
+          box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.25), inset -5px -5px 5px white;
+  color: #35b9d7;
+}
+
 #transpose {
   width: 100%;
-  margin: 1rem 0.5rem;
+  margin: 0 0.5rem 0;
 }
 /*# sourceMappingURL=style.css.map */

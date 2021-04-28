@@ -13,7 +13,10 @@ const Keypad = (props) => {
         if (clickedKey) {
             setGlobalkey((prev) => {
                 prev.inputKey = clickedKey;
-                console.log(clickedKey);
+                prev.inputKeySub = '';
+                prev.outputKey = '';
+                prev.outputKeySub = '';
+
                 return ({ ...prev })
             })
         }
@@ -52,7 +55,6 @@ const Keypad = (props) => {
 
     }
 
-    console.log(keys);
 
     return (
 
