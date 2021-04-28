@@ -8,6 +8,7 @@ import Subdisplay from './Subdisplay'
 import Keypad from './Keypad'
 import Subpad from './Subpad'
 import Transpose from './Transpose'
+import TransposeEngine from './logic'
 
 
 function App() {
@@ -24,6 +25,17 @@ function App() {
   });
 
 
+  function execute() {
+
+    let finalOutput = TransposeEngine(globalKeys.inputKey + globalKeys.inputKeySub, globalKeys.homeKey + globalKeys.homeKeySub);
+
+    setGlobalKeys((prev) => {
+      prev.outputKey = finalOutput[0];
+      prev.outputKeySub = finalOutput[1];
+      return ({ ...prev })
+    })
+
+  }
 
 
 
@@ -39,7 +51,7 @@ function App() {
           <Subdisplay />
           <Keypad />
           <Subpad />
-          <Transpose />
+          <Transpose exe={execute} />
         </KeyContext.Provider>
       </div>
     </div>

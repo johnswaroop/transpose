@@ -22,7 +22,6 @@ const Subpad = (props) => {
     function setSub(e) {
         if (globalKeys.inputKey) {
             let sub = e.target.id;
-            console.log(sub);
             setGlobalKeys((prev) => {
                 prev.inputKeySub = sub;
                 return ({ ...prev });
