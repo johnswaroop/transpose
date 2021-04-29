@@ -11,6 +11,14 @@ const Subpad = (props) => {
 
     let sharpbtn = off;
     let flatbtn = off;
+    let setter;
+
+    if (globalKeys.homeToggle) {
+        setter = setSubHome;
+    }
+    else {
+        setter = setSubInput;
+    }
 
     if (globalKeys.inputKeySub == '#') {
         sharpbtn = on;
@@ -19,7 +27,7 @@ const Subpad = (props) => {
         flatbtn = on;
     }
 
-    function setSub(e) {
+    function setSubInput(e) {
         if (globalKeys.inputKey) {
             let sub = e.target.id;
             setGlobalKeys((prev) => {
@@ -29,12 +37,27 @@ const Subpad = (props) => {
         }
     }
 
+    function setSubHome(e) {
+
+        let sub = e.target.id;
+        if (globalKeys.homeKey) {
+
+
+            setGlobalKeys((prev) => {
+                prev.homeKeySub = sub;
+                return ({ ...prev });
+            })
+        }
+
+
+    }
+
     return (
         <div className='subpad-container'>
-            <div id='#' className={sharpbtn} onClick={setSub}>
+            <div id='#' className={sharpbtn} onClick={setter}>
                 <h1 id='#'>Sharp #</h1>
             </div>
-            <div id='♭' className={flatbtn} onClick={setSub}>
+            <div id='♭' className={flatbtn} onClick={setter}>
                 <h1 id='♭'>Flat ♭</h1>
             </div>
         </div>

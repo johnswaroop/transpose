@@ -4,6 +4,24 @@ const Display = (props) => {
 
     const [globalKeys, setGlobalKeys] = useContext(KeyContext);
 
+    let output;
+    let outputsub;
+
+    if (globalKeys.outputKey) {
+
+        output = globalKeys.outputKey;
+    }
+    else {
+
+        if (globalKeys.homeToggle) {
+
+            output = <p style={{ fontSize: '3rem' }}>Enter Home</p>
+        }
+        else {
+            output = <p style={{ fontSize: '3rem' }}>Enter Key</p>
+        }
+
+    }
 
 
 
@@ -13,7 +31,7 @@ const Display = (props) => {
 
             <div className='output-key-box'>
                 <h1 className='output-key'>
-                    {globalKeys.outputKey}
+                    {output}
                 </h1>
                 <h1 className='output-key-sub'>
                     {globalKeys.outputKeySub}

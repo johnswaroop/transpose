@@ -55,6 +55,7 @@ body {
 @media screen and (max-width: 600px) {
   .App {
     width: 100vw;
+    min-height: 730px;
     height: 100vh;
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -62,6 +63,7 @@ body {
     border-radius: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
+    overflow-y: scroll;
   }
 }
 

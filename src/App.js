@@ -21,19 +21,49 @@ function App() {
     homeKeySub: '',
     outputKey: '',
     outputKeySub: '',
+    homeToggle: false
 
   });
 
 
-  function execute() {
+  function executeInput() {
 
-    let finalOutput = TransposeEngine(globalKeys.inputKey + globalKeys.inputKeySub, globalKeys.homeKey + globalKeys.homeKeySub);
+    if (globalKeys.inputKey) {
+      let finalOutput = TransposeEngine(globalKeys.inputKey + globalKeys.inputKeySub, globalKeys.homeKey + globalKeys.homeKeySub);
 
-    setGlobalKeys((prev) => {
-      prev.outputKey = finalOutput[0];
-      prev.outputKeySub = finalOutput[1];
-      return ({ ...prev })
-    })
+      setGlobalKeys((prev) => {
+        prev.outputKey = finalOutput[0];
+        prev.outputKeySub = finalOutput[1];
+        return ({ ...prev })
+      })
+    }
+
+  }
+
+
+  function executeHome() {
+
+    if (globalKeys.homeKey) {
+      setGlobalKeys((prev) => {
+
+        prev.homeToggle = false;
+
+        return ({ ...prev })
+      })
+    }
+
+  }
+
+  let execute;
+
+  if (globalKeys.homeToggle) {
+
+    execute = executeHome;
+
+  }
+  else {
+
+    execute = executeInput;
 
   }
 

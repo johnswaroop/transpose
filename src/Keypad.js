@@ -5,33 +5,21 @@ import { KeyContext } from './KeyContext'
 const Keypad = (props) => {
 
     let [globalKeys, setGlobalkey] = useContext(KeyContext);
+    let Clicker;
 
+    if (globalKeys.homeToggle == false) {
 
-    function KeypadClicker(e) {
+        Clicker = KeypadClickerInput;
+    }
+    else {
 
-        let clickedKey = e.target.id;
-        if (clickedKey) {
-            setGlobalkey((prev) => {
-                prev.inputKey = clickedKey;
-                prev.inputKeySub = '';
-                prev.outputKey = '';
-                prev.outputKeySub = '';
-
-                return ({ ...prev })
-            })
-        }
-
+        Clicker = KeypadClickerHome;
 
     }
 
+
+
     let clickedKey = globalKeys.inputKey.charCodeAt(0);
-
-
-
-
-
-
-
 
     let keys = new Array();
 
@@ -55,13 +43,51 @@ const Keypad = (props) => {
 
     }
 
+    function KeypadClickerInput(e) {
+
+        let clickedKey = e.target.id;
+        if (clickedKey) {
+            setGlobalkey((prev) => {
+                prev.inputKey = clickedKey;
+                prev.inputKeySub = '';
+                prev.outputKey = '';
+                prev.outputKeySub = '';
+
+                return ({ ...prev })
+            })
+        }
+
+
+    }
+
+    function KeypadClickerHome(e) {
+
+        let clickedKeyHome = e.target.id;
+        console.log(clickedKeyHome);
+        if (clickedKeyHome) {
+            setGlobalkey((prev) => {
+                prev.inputKey = '';
+                prev.inputKeySub = '';
+                prev.outputKey = '';
+                prev.outputKeySub = '';
+                prev.homeKey = clickedKeyHome;
+                prev.homeKeySub = '';
+                return ({ ...prev })
+            })
+        }
+
+
+    }
+
 
     return (
 
-        <div className='keypad-container' onClick={KeypadClicker} >
+        <div className='keypad-container' onClick={Clicker} >
 
             {keys}
-            <div className='key disable-click' id='X'>
+            <div className='key' id='X' onClick={() => {
+                window.location.reload();
+            }}>
                 <h1>X</h1>
             </div>
 
